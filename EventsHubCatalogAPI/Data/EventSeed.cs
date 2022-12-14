@@ -25,7 +25,7 @@ namespace EventsHubCatalogAPI.Data
                 new CategoryType{Type="Business"},
                 new CategoryType{Type="Health & Fitness"},
                 new CategoryType{Type="Food & Drink"},
-                new CategoryType{Type="Sports "},
+                new CategoryType{Type="Sports"},
                 new CategoryType{Type="Holiday"}
             };
         }
