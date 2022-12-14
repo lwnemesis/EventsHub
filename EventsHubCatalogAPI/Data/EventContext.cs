@@ -3,8 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EventsHubCatalogAPI.Data
 {
-    public class EventContext:DbContext 
+    public class EventContext: DbContext 
     {
+        public EventContext(DbContextOptions options) : base(options)
+        { }
         public DbSet <CategoryType> CategoryTypes { get; set; }
         public DbSet <OrganizerType> BrandTypes { get; set; }
         public DbSet<EventType> Events { get; set; }
@@ -27,7 +29,7 @@ namespace EventsHubCatalogAPI.Data
                     .IsRequired()
                     .ValueGeneratedOnAdd();
 
-                e.Property(b => b.Brand)
+                e.Property(b => b.Organizer)
                     .IsRequired()
                     .HasMaxLength(100);
             });
@@ -43,6 +45,9 @@ namespace EventsHubCatalogAPI.Data
                     .HasMaxLength(250);
 
                 e.Property(c => c.Price)
+                    .IsRequired();
+
+                e.Property(c => c.DateTime)
                     .IsRequired();
 
                 e.HasOne(t => t.CategoryType)
