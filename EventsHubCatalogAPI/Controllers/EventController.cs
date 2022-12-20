@@ -1,6 +1,11 @@
-﻿namespace EventsHubCatalogAPI.Controllers
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace EventsHubCatalogAPI.Controllers
 {
-    public class EventController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class EventController : ControllerBase
     {
     }
 }
