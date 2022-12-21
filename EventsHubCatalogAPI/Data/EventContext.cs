@@ -47,7 +47,8 @@ namespace EventsHubCatalogAPI.Data
                 e.Property(c => c.Price)
                     .IsRequired();
 
-                e.Property(c => c.DateTime);
+                e.Property(c => c.DateTime)
+                    .IsRequired();
 
                 e.HasOne(t => t.CategoryType)
                     .WithMany()
