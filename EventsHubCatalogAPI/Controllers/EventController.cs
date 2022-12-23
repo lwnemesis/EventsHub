@@ -21,7 +21,7 @@ namespace EventsHubCatalogAPI.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> EventTypes()
+        public async Task<IActionResult> CategoryTypes()
         {
             var types = await _context.CategoryTypes.ToListAsync();
             return Ok(types);
