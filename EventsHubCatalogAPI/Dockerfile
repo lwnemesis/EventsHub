@@ -7,10 +7,9 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["EventsHubCatalogAPI/EventsHubCatalogAPI.csproj", "EventsHubCatalogAPI/"]
-RUN dotnet restore "EventsHubCatalogAPI/EventsHubCatalogAPI.csproj"
 COPY . .
-WORKDIR "/src/EventsHubCatalogAPI"
+RUN dotnet restore "EventsHubCatalogAPI.csproj"
+
 RUN dotnet build "EventsHubCatalogAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
