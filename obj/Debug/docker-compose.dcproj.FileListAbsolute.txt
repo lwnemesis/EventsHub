@@ -4,7 +4,12 @@ F:\Cohort\EventsHub\bin\Debug\appsettings.Development.json
 F:\Cohort\EventsHub\bin\Debug\appsettings.json
 F:\Cohort\EventsHub\bin\Debug\EventsHubCatalogAPI.staticwebassets.runtime.json
 F:\Cohort\EventsHub\bin\Debug\EventsHubCatalogAPI.exe
+F:\Cohort\EventsHub\bin\Debug\WebMvc.deps.json
+F:\Cohort\EventsHub\bin\Debug\WebMvc.runtimeconfig.json
+F:\Cohort\EventsHub\bin\Debug\WebMvc.staticwebassets.runtime.json
+F:\Cohort\EventsHub\bin\Debug\WebMvc.exe
 F:\Cohort\EventsHub\bin\Debug\EventsHubCatalogAPI.dll
+F:\Cohort\EventsHub\bin\Debug\WebMvc.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.EntityFrameworkCore.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
@@ -14,6 +19,7 @@ F:\Cohort\EventsHub\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
 F:\Cohort\EventsHub\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Cohort\EventsHub\bin\Debug\Newtonsoft.Json.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
@@ -25,6 +31,7 @@ F:\Cohort\EventsHub\bin\Debug\Microsoft.OpenApi.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.Data.SqlClient.dll
 F:\Cohort\EventsHub\bin\Debug\Microsoft.Identity.Client.dll
 F:\Cohort\EventsHub\bin\Debug\EventsHubCatalogAPI.pdb
+F:\Cohort\EventsHub\bin\Debug\WebMvc.pdb
 F:\Cohort\EventsHub\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 F:\Cohort\EventsHub\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 F:\Cohort\EventsHub\obj\Debug\docker-compose.dcproj.CopyComplete

@@ -1,16 +1,53 @@
+networks:
+  backend: {}
+  frontend: {}
 services:
   eventshubcatalogapi:
     build:
-      context: F:\Cohort\EventsHub
-      dockerfile: EventsHubCatalogAPI/Dockerfile
+      context: F:\Cohort\EventsHub\EventsHubCatalogAPI
+      dockerfile: Dockerfile
+    container_name: eventshubcatalogapi
+    depends_on:
+      mssqlserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=mssqlserver;Initial Catalog=EventsHubDb;User Id=sa;Password=ProductApi123(!);Connect
+        Timeout=30;TrustServerCertificate=false;Encrypt=false;
+      ExternalBaseUrl: http://localhost:7023
+    image: eventshub/catalogapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - published: 7023
+      target: 80
+  mssqlserver:
+    container_name: eventshubsqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ProductApi123(!)
+      SA_PASSWORD: ProductApi123(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - published: 1450
+      target: 1433
+  webmvc:
+    build:
+      context: F:\Cohort\EventsHub\WebMvc
+      dockerfile: Dockerfile
+    container_name: eventswebshop
+    depends_on:
+      eventshubcatalogapi:
+        condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_URLS: https://+:443;http://+:80
-    image: eventshubcatalogapi
+      CatalogUrl: http://events
+    image: eventshub/webmvc
+    networks:
+      frontend: null
     ports:
-    - target: 80
-    - target: 443
-    volumes:
-    - C:\Users\sergey\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\sergey\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - published: 7501
+      target: 80
 version: '3.4'
