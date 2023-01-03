@@ -37,7 +37,7 @@ services:
     ports:
     - mode: ingress
       target: 80
-      published: "7023"
+      published: "7024"
       protocol: tcp
     tty: true
     volumes:

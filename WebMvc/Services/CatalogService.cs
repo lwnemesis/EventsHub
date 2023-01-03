@@ -13,7 +13,7 @@ namespace WebMvc.Services
         public CatalogService(IConfiguration config, IHttpClient client)
         {
             _httpClient = client;
-            _baseUrl = $"{config["CatalogUrl"]}/api/events";
+            _baseUrl = $"{config["CatalogUrl"]}/api/event";
         }
         public async Task<IEnumerable<SelectListItem>> GetCategoriesAsync()
         {

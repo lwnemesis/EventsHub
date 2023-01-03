@@ -27,11 +27,11 @@
                 }
                 if (string.IsNullOrEmpty(filterQs))
                 {
-                    preUri = $"{baseUri}/items?pageIndex={page}&pageSize={take}";
+                    preUri = $"{baseUri}/events?pageIndex={page}&pageSize={take}";
                 }
                 else
                 {
-                    preUri = $"{baseUri}/items/filter?pageIndex={page}&pageSize={take}&{filterQs}";
+                    preUri = $"{baseUri}/events/filter?pageIndex={page}&pageSize={take}&{filterQs}";
                 }
                 return preUri;
             }

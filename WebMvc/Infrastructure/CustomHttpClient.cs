@@ -1,6 +1,6 @@
 ﻿namespace WebMvc.Infrastructure
 {
-    public class CustomHttpClient:IHttpClient
+    public class CustomHttpClient : IHttpClient
     {
         private readonly HttpClient _httpClient;
         public CustomHttpClient()

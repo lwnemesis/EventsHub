@@ -12,9 +12,9 @@ services:
       dockerfile: Dockerfile
     environment:
       ConnectionString: "Data Source=mssqlserver;Initial Catalog=EventsHubDb;User Id=sa;Password=ProductApi123(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;"
-      ExternalBaseUrl: http://localhost:7023
+      ExternalBaseUrl: http://localhost:7024
     ports:
-      - "7023:80"
+      - "7024:80"
     container_name: eventshubcatalogapi
     networks:
       - frontend
@@ -39,8 +39,7 @@ services:
       context: .\WebMvc
       dockerfile: Dockerfile
     environment:
-      ASPNETCORE_ENVIRONMENT: Development
-      CatalogUrl: http://events
+      CatalogUrl: http://eventshubcatalogapi
     ports:
       - "7501:80"
     container_name: eventswebshop
