@@ -22,6 +22,23 @@ services:
     depends_on:
       - mssqlserver
 
+  tokenserver:
+    image: eventshub/tokenapi
+    build:
+      context: .\TokenServiceAPI
+      dockerfile: Dockerfile
+    environment:
+      ConnectionString: "Data Source=tokensqlserver;Initial Catalog=TokenServiceDb;User Id=sa;Password=ProductApi123(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;"
+      MvcClient: http://localhost:7501
+    ports:
+      - "7801:80"
+    container_name: eventshubtokenapi
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - tokensqlserver
+  
   mssqlserver:
     image: "mcr.microsoft.com/mssql/server:latest"
     environment:
@@ -33,6 +50,19 @@ services:
     container_name: eventshubsqlserver
     networks:
       - backend
+
+  tokensqlserver:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: ProductApi123(!)
+      SA_PASSWORD: ProductApi123(!)
+    ports:
+      - "1447:1433"
+    container_name: eventshubtokensqlserver
+    networks:
+      - backend
+
   webmvc:
     image: eventshub/webmvc
     build:

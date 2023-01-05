@@ -3581,23 +3581,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\David M\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\sergey\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\EventsHub\\WebMvc\\WebMvc.csproj",
+      "projectUniqueName": "F:\\Cohort\\EventsHub\\WebMvc\\WebMvc.csproj",
       "projectName": "WebMvc",
-      "projectPath": "D:\\Dev\\EventsHub\\WebMvc\\WebMvc.csproj",
-      "packagesPath": "C:\\Users\\David M\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\EventsHub\\WebMvc\\obj\\",
+      "projectPath": "F:\\Cohort\\EventsHub\\WebMvc\\WebMvc.csproj",
+      "packagesPath": "C:\\Users\\sergey\\.nuget\\packages\\",
+      "outputPath": "F:\\Cohort\\EventsHub\\WebMvc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\David M\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sergey\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3613,8 +3615,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Dev\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {
-              "projectPath": "D:\\Dev\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj"
+            "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {
+              "projectPath": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj"
             }
           }
         }
@@ -3657,7 +3659,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
