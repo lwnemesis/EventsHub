@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Y0p1WOmrGmnTy0yjCZvktvkzupaa67ov9Sp9sWAVI++Jsx8aryufYzY/aPgWpWjlVhVNnUVgugy3vRxYNKtapg==",
+  "dgSpecHash": "OZfGQ5M2Ajyk/P483dFggjpTYttHnujxK9Xg9bU0NATooghsC8YXwzH/aBU92CQEKlH2toOWxG4tbfEEmxw2XA==",
   "success": true,
   "projectFilePath": "F:\\Cohort\\EventsHub\\WebMvc\\WebMvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sergey\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\sergey\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\sergey\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\6.0.12\\microsoft.aspnetcore.authentication.openidconnect.6.0.12.nupkg.sha512",
     "C:\\Users\\sergey\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\sergey\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",

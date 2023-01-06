@@ -1,6 +1,6 @@
 ﻿@model WebMvc.ViewModels.EventIndexViewModel
 @{
-    ViewData["Title"] = "Catalog";
+    ViewData["Title"] = "Events";
 }
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
@@ -48,7 +48,7 @@
 
 <section class="esh-catalog-filters">
     <div class="container">
-        <form asp-action="Index" asp-controller="Catalog" method="post">
+        <form asp-action="Index" asp-controller="Event" method="post">
             <label class="esh-catalog-label" data-title="organizer">
                 <select asp-for="@Model.OrganizerFilterApplied" asp-items="@Model.Organizers" class="esh-catalog-filter"></select>
             </label>
