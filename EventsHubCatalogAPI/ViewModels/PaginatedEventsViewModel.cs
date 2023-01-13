@@ -1,6 +1,8 @@
-﻿namespace WebMvc.Models
+﻿using EventsHubCatalogAPI.Domain;
+
+namespace EventsHubCatalogAPI.ViewModels
 {
-    public class EventsCatalog
+    public class PaginatedEventsViewModel
     {
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
