@@ -80,3 +80,29 @@ services:
     depends_on:
       - eventshubcatalogapi
       - tokenserver
+
+  cart:
+    image: eventshub/cartapi
+    build:
+      context: .\CartAPI
+      dockerfile: Dockerfile
+    environment:
+      IdentityUrl: http://192.168.168.67:7801
+      ConnectionString: basket.data
+    ports:
+      - "7011:80"
+    container_name: eventshubcartapi
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - tokenserver
+      - basket.data
+
+  basket.data:
+   image: redis
+   ports:
+     - "7051:6379"
+   container_name: eventshubbasketdata
+   networks:
+     - backend
