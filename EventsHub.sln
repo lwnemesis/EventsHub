@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{DB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{B1C83438-5620-42F1-ACD1-1E02710377BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsHubCatalogAPI", "EventsHubCatalogAPI\EventsHubCatalogAPI.csproj", "{05B057E4-21F7-4FEA-B323-0A365F9D3724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventsHubCatalogAPI", "EventsHubCatalogAPI\EventsHubCatalogAPI.csproj", "{05B057E4-21F7-4FEA-B323-0A365F9D3724}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A3C823B0-79E8-478E-BF61-FBCFF41757B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{05B057E4-21F7-4FEA-B323-0A365F9D3724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05B057E4-21F7-4FEA-B323-0A365F9D3724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05B057E4-21F7-4FEA-B323-0A365F9D3724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3C823B0-79E8-478E-BF61-FBCFF41757B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C823B0-79E8-478E-BF61-FBCFF41757B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C823B0-79E8-478E-BF61-FBCFF41757B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C823B0-79E8-478E-BF61-FBCFF41757B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
