@@ -1,4 +1,14 @@
+using WebMvc.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
+ConfigurationManager configuration = builder.Configuration;
+
+builder.Services.AddControllersWithViews();
+
+// Add services to the container.
+builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IHttpClient, CustomHttpClient>();
+builder.Services.AddTransient<ICatalogService, CatalogService>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -22,4 +32,7 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Event}/{action=Index}");
 app.Run();
