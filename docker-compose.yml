@@ -1,0 +1,53 @@
+version: '3.4'
+
+networks:
+  frontend:
+  backend:
+
+
+services:
+  eventscatalogapi:
+    image: eventshub/catalogapi
+    build:
+      context: .\EventsHubCatalogAPI
+      dockerfile: Dockerfile
+    environment:
+      ConnectionString: "Data Source=mssqlserver;Initial Catalog=EventsHubDb;User Id=sa;Password=ProductApi123(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;"
+      ExternalBaseUrl: http://localhost:7024
+    ports:
+      - "7024:80"
+    container_name: eventshubcatalogapi
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - mssqlserver
+
+  mssqlserver:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: ProductApi123(!)
+      SA_PASSWORD: ProductApi123(!)
+    ports:
+      - "1449:1433"
+    container_name: eventshubsqlserver
+    networks:
+      - backend
+
+      
+  webmvc:
+    image: eventshub/webmvc
+    build:
+      context: .\WebMvc
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CatalogUrl: http://eventscatalogapi
+    ports:
+      - "7505:80"
+    container_name: eventswebshop
+    networks:
+      - frontend
+    depends_on:
+      - eventscatalogapi

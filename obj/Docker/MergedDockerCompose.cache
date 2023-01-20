@@ -1,0 +1,61 @@
+name: dockercompose7251985271223463148
+services:
+  eventscatalogapi:
+    build:
+      context: C:\Users\harsh\Source\Repos\EventsHub\EventsHubCatalogAPI
+      dockerfile: Dockerfile
+    container_name: eventshubcatalogapi
+    depends_on:
+      mssqlserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=mssqlserver;Initial Catalog=EventsHubDb;User Id=sa;Password=ProductApi123(!);Connect
+        Timeout=30;TrustServerCertificate=false;Encrypt=false;
+      ExternalBaseUrl: http://localhost:7024
+    image: eventshub/catalogapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7024"
+      protocol: tcp
+  mssqlserver:
+    container_name: eventshubsqlserver
+    environment:
+      ACCEPT_EULA: "true"
+      MSSQL_SA_PASSWORD: ProductApi123(!)
+      SA_PASSWORD: ProductApi123(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1449"
+      protocol: tcp
+  webmvc:
+    build:
+      context: C:\Users\harsh\Source\Repos\EventsHub\WebMvc
+      dockerfile: Dockerfile
+    container_name: eventswebshop
+    depends_on:
+      eventscatalogapi:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CatalogUrl: http://eventscatalogapi
+    image: eventshub/webmvc
+    networks:
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7505"
+      protocol: tcp
+networks:
+  backend:
+    name: dockercompose7251985271223463148_backend
+  frontend:
+    name: dockercompose7251985271223463148_frontend
