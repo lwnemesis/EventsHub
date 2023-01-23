@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {}
+    "D:\\Coding\\GitHub\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {}
   },
   "projects": {
-    "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {
+    "D:\\Coding\\GitHub\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
+        "projectUniqueName": "D:\\Coding\\GitHub\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
         "projectName": "EventsHubCatalogAPI",
-        "projectPath": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
-        "packagesPath": "C:\\Users\\sergey\\.nuget\\packages\\",
-        "outputPath": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\obj\\",
+        "projectPath": "D:\\Coding\\GitHub\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
+        "packagesPath": "C:\\Users\\lqletdreamfly\\.nuget\\packages\\",
+        "outputPath": "D:\\Coding\\GitHub\\EventsHub\\EventsHubCatalogAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sergey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lqletdreamfly\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -46,6 +45,24 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.17.0, )"
@@ -74,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

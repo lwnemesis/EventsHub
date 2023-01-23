@@ -2,9 +2,9 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Text.Json.Nodes;
-using WebMvc.infrastructure;
+using WebMvc.Infrastructure;
 using WebMvc.Models;
-using static WebMvc.infrastructure.APIPaths;
+using static WebMvc.Infrastructure.APIPaths;
 
 namespace WebMvc.Services
 {
@@ -15,7 +15,7 @@ namespace WebMvc.Services
         public CatalogService(IConfiguration config,IHttpClient client)
         {
             _httpClient= client;
-            _baseUrl = $"{config["CatalogUrl"]}/api/catalog";
+            _baseUrl = $"{config["CatalogUrl"]}/api/event";
         }
         public async Task<IEnumerable<SelectListItem>>  GetOrganizersAsync()
         {

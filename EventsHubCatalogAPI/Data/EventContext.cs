@@ -5,6 +5,8 @@ namespace EventsHubCatalogAPI.Data
 {
     public class EventContext: DbContext 
     {
+     
+
         public EventContext(DbContextOptions options) : base(options)
         { }
         public DbSet <CategoryType> CategoryTypes { get; set; }
@@ -13,7 +15,7 @@ namespace EventsHubCatalogAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CategoryType>(e =>
-            {
+            { 
                 e.Property(t => t.Id)
                     .IsRequired()
                     .ValueGeneratedOnAdd();

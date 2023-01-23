@@ -21,7 +21,7 @@ using (var scope = app.Services.CreateScope())
     EventSeed.Seed(context);
 }
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+//if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -34,3 +34,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+    

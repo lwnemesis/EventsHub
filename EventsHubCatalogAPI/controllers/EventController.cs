@@ -56,7 +56,42 @@ namespace EventsHubCatalogAPI.Controllers
             };
             return Ok(model);
         }
-    private List<EventType> ChangePictureUrl(List<EventType> events)
+        [HttpGet("[action]/filter")]
+        public async Task<IActionResult> Events(
+             [FromQuery] int? categoryTypeId,
+            [FromQuery] int? organierTypeId,
+            [FromQuery] int pageIndex = 0, 
+            [FromQuery] int pageSize = 6
+           )
+
+        {
+            var query = (IQueryable<EventType>)_context.Events;
+            if (categoryTypeId.HasValue)
+            {
+                query = query.Where(c => c.CategoryTypeId == categoryTypeId.Value);
+            }
+            if (organierTypeId.HasValue)
+            {
+                query = query.Where(c => c.OrganizerTypeId== organierTypeId.Value);
+            }
+            var eventsCount = _context.Events.LongCountAsync();
+            var events = await _context.Events
+                            .OrderBy(c => c.Name)
+                            .Skip(pageIndex * pageSize)
+                            .Take(pageSize)
+                            .ToListAsync();
+            events = ChangePictureUrl(events);
+
+            var model = new PaginatedEventsViewModel
+            {
+                PageIndex = pageIndex,
+                PageSize = events.Count,
+                Data = events,
+                Count = eventsCount.Result
+            };
+            return Ok(model);
+        }
+        private List<EventType> ChangePictureUrl(List<EventType> events)
         {
             events.ForEach( e=> e.PictureUrl
                                   .Replace("http://externalcatalogbaseurltobereplaced",
