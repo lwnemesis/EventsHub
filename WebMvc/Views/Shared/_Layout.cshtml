@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebMvc</title>
 
-    <environment names="Development,Staging,Production">
+    <environment exclude="Development">
+        
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/app.css" />
         <link rel="stylesheet" href="~/css/app.component.css" />
         <link rel="stylesheet" href="~/css/shared/components/header/header.css" />
         <link rel="stylesheet" href="~/css/shared/components/identity/identity.css" />
         <link rel="stylesheet" href="~/css/shared/components/pager/pager.css" />
-        <link rel="stylesheet" href="~/css/basket/basket.component.css" /> 
+        <link rel="stylesheet" href="~/css/basket/basket.component.css" />
 
         <link rel="stylesheet" href="~/css/basket/basket-status/basket-status.component.css" />
         <link rel="stylesheet" href="~/css/catalog/catalog.component.css" />

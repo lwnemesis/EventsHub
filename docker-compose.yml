@@ -12,7 +12,7 @@ services:
       dockerfile: Dockerfile
     environment:
        ConnectionString: "Data Source=mssqlserver;Initial Catalog=EventsHubDb;User Id=sa;Password=EventHubApi(!);TrustServerCertificate=false;Connect Timeout=30;Encrypt=false;"
-       ExternalBaseUrl: https://localhost:7070
+       ExternalBaseUrl: http://localhost:7070
     ports:
          - "7070:80"
     container_name: eventshubcatalogapi
@@ -28,7 +28,7 @@ services:
       context: .\TokenServiceAPI
       dockerfile: Dockerfile
     environment:
-      ConnectionString: "Data Source=tokensqlserver;Initial Catalog=TokenServiceDb;User Id=sa;Password= EventHubApi(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;"
+      ConnectionString: "Data Source=tokensqlserver;Initial Catalog=TokenServiceDb;User Id=sa;Password=EventHubApi(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;"
       MvcClient: http://localhost:7075
     ports:
       - "7071:80"
@@ -48,7 +48,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development44
       CatalogUrl: http://eventshubcatalogapi
-      IdentityUrl: http://172.27.208.1:7071
+      IdentityUrl: http://192.168.1.47:7071
       CallbackUrl: http://localhost:7075
     ports:
       - "7075:80"
