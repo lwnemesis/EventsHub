@@ -1,7 +1,7 @@
 {
   "ContentRoots": [
     "/src/wwwroot/",
-    "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+    "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
     "/src/obj/Debug/net6.0/scopedcss/bundle/"
   ],
   "Root": {
@@ -1008,6 +1008,14 @@
         "Children": {
           "bootstrap": {
             "Children": {
+              ".bower.json": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "lib/bootstrap/.bower.json"
+                },
+                "Patterns": null
+              },
               "dist": {
                 "Children": {
                   "css": {
@@ -1137,6 +1145,38 @@
                         "Asset": {
                           "ContentRootIndex": 0,
                           "SubPath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+                        },
+                        "Patterns": null
+                      },
+                      "bootstrap-theme.css": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/css/bootstrap-theme.css"
+                        },
+                        "Patterns": null
+                      },
+                      "bootstrap-theme.css.map": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/css/bootstrap-theme.css.map"
+                        },
+                        "Patterns": null
+                      },
+                      "bootstrap-theme.min.css": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/css/bootstrap-theme.min.css"
+                        },
+                        "Patterns": null
+                      },
+                      "bootstrap-theme.min.css.map": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/css/bootstrap-theme.min.css.map"
                         },
                         "Patterns": null
                       },
@@ -1272,6 +1312,52 @@
                     "Asset": null,
                     "Patterns": null
                   },
+                  "fonts": {
+                    "Children": {
+                      "glyphicons-halflings-regular.eot": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/fonts/glyphicons-halflings-regular.eot"
+                        },
+                        "Patterns": null
+                      },
+                      "glyphicons-halflings-regular.svg": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/fonts/glyphicons-halflings-regular.svg"
+                        },
+                        "Patterns": null
+                      },
+                      "glyphicons-halflings-regular.ttf": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf"
+                        },
+                        "Patterns": null
+                      },
+                      "glyphicons-halflings-regular.woff": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff"
+                        },
+                        "Patterns": null
+                      },
+                      "glyphicons-halflings-regular.woff2": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2"
+                        },
+                        "Patterns": null
+                      }
+                    },
+                    "Asset": null,
+                    "Patterns": null
+                  },
                   "js": {
                     "Children": {
                       "bootstrap.bundle.js": {
@@ -1369,6 +1455,14 @@
                           "SubPath": "lib/bootstrap/dist/js/bootstrap.min.js.map"
                         },
                         "Patterns": null
+                      },
+                      "npm.js": {
+                        "Children": null,
+                        "Asset": {
+                          "ContentRootIndex": 0,
+                          "SubPath": "lib/bootstrap/dist/js/npm.js"
+                        },
+                        "Patterns": null
                       }
                     },
                     "Asset": null,
@@ -1392,6 +1486,14 @@
           },
           "jquery-validation-unobtrusive": {
             "Children": {
+              ".bower.json": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "lib/jquery-validation-unobtrusive/.bower.json"
+                },
+                "Patterns": null
+              },
               "jquery.validate.unobtrusive.js": {
                 "Children": null,
                 "Asset": {
@@ -1422,6 +1524,14 @@
           },
           "jquery-validation": {
             "Children": {
+              ".bower.json": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "lib/jquery-validation/.bower.json"
+                },
+                "Patterns": null
+              },
               "dist": {
                 "Children": {
                   "additional-methods.js": {
@@ -1474,6 +1584,14 @@
           },
           "jquery": {
             "Children": {
+              ".bower.json": {
+                "Children": null,
+                "Asset": {
+                  "ContentRootIndex": 0,
+                  "SubPath": "lib/jquery/.bower.json"
+                },
+                "Patterns": null
+              },
               "dist": {
                 "Children": {
                   "jquery.js": {

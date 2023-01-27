@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tFB0+3WtiN5UDrgJmTn21QVVwPB1SnAnQTiXIwQVfzJB99bKQslcui+XDwQSMdPoIjHe3qKM/R5VyO9vGSrytw==",
+  "dgSpecHash": "E6AMgLF1NUuFKaueFWhISa+bzQTP2Hy/09SjXSTkSVbOiQgW8hf2J/gDVHOY5eNNLXLXroLOZtNBf+rPw9Ln4g==",
   "success": true,
-  "projectFilePath": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
+  "projectFilePath": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sergey\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\sergey\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

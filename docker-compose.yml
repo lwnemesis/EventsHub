@@ -72,6 +72,10 @@ services:
       CatalogUrl: http://eventshubcatalogapi
       IdentityUrl: http://192.168.168.67:7801
       CallbackUrl: http://localhost:7501
+      CartUrl: http://cart
+      OrderUrl: http://order
+      StripePublicKey: pk_test_jZlpubvlPmcV6QJPReImelQy
+      StripePrivateKey: sk_test_bSHT9qxwjpyCOP0qdAvHLfAA
     ports:
       - "7501:80"
     container_name: eventswebshop
@@ -80,6 +84,8 @@ services:
     depends_on:
       - eventshubcatalogapi
       - tokenserver
+      - cart
+      - order
 
   cart:
     image: eventshub/cartapi
@@ -106,3 +112,33 @@ services:
    container_name: eventshubbasketdata
    networks:
      - backend
+
+  order:
+    image: eventshub/orderapi
+    build:
+      context: .\OrderAPI
+      dockerfile: Dockerfile
+    environment:
+      IdentityUrl: http://192.168.168.67:7801
+      ConnectionString: "Data Source=ordersqlserver;Initial Catalog=OrdersDb;User Id=sa;Password=ProductApi123(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;"
+    ports:
+      - "7021:80"
+    container_name: eventshuborderapi
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - tokenserver
+      - ordersqlserver
+  
+  ordersqlserver:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: ProductApi123(!)
+      SA_PASSWORD: ProductApi123(!)
+    ports:
+      - "1451:1433"
+    container_name: eventshubordersqlserver
+    networks:
+      - backend

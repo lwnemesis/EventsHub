@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Cohort\\EventsHub\\WebMvc\\WebMvc.csproj": {}
+    "F:\\Cohort\\Copy Of\\EventsHub\\WebMvc\\WebMvc.csproj": {}
   },
   "projects": {
-    "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {
+    "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
+        "projectUniqueName": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
         "projectName": "EventsHubCatalogAPI",
-        "projectPath": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
+        "projectPath": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj",
         "packagesPath": "C:\\Users\\sergey\\.nuget\\packages\\",
-        "outputPath": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\obj\\",
+        "outputPath": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -96,14 +96,14 @@
         }
       }
     },
-    "F:\\Cohort\\EventsHub\\WebMvc\\WebMvc.csproj": {
+    "F:\\Cohort\\Copy Of\\EventsHub\\WebMvc\\WebMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Cohort\\EventsHub\\WebMvc\\WebMvc.csproj",
+        "projectUniqueName": "F:\\Cohort\\Copy Of\\EventsHub\\WebMvc\\WebMvc.csproj",
         "projectName": "WebMvc",
-        "projectPath": "F:\\Cohort\\EventsHub\\WebMvc\\WebMvc.csproj",
+        "projectPath": "F:\\Cohort\\Copy Of\\EventsHub\\WebMvc\\WebMvc.csproj",
         "packagesPath": "C:\\Users\\sergey\\.nuget\\packages\\",
-        "outputPath": "F:\\Cohort\\EventsHub\\WebMvc\\obj\\",
+        "outputPath": "F:\\Cohort\\Copy Of\\EventsHub\\WebMvc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -126,8 +126,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {
-                "projectPath": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj"
+              "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj": {
+                "projectPath": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\EventsHubCatalogAPI.csproj"
               }
             }
           }
@@ -153,6 +153,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[7.2.3, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[41.4.0, )"
             }
           },
           "imports": [

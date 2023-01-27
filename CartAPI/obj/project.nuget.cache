@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mEDDNR8Vi2Vh9trJA+CTLCWRwnwVW0CfVD04BrvDjFtIzpAE45hba92te7hjd4c2IcDtOU9eIzbUWHRK6t9z5Q==",
+  "dgSpecHash": "Feys2yc4UwjffXa3GAB/wnyvAqAUvH3l5Kg4LK5Md4SkY4Tn2tx6b1PgAqKzW17xHnmt8GZgOORxf8WlPs+9yA==",
   "success": true,
-  "projectFilePath": "F:\\Cohort\\EventsHub\\CartAPI\\CartAPI.csproj",
+  "projectFilePath": "F:\\Cohort\\Copy Of\\EventsHub\\CartAPI\\CartAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sergey\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.12\\microsoft.aspnetcore.authentication.jwtbearer.6.0.12.nupkg.sha512",
     "C:\\Users\\sergey\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.12\\microsoft.aspnetcore.jsonpatch.6.0.12.nupkg.sha512",

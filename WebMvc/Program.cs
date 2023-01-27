@@ -15,6 +15,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IHttpClient, CustomHttpClient>();
 builder.Services.AddTransient<ICatalogService, CatalogService>();
 builder.Services.AddTransient<IIdentityService<ApplicationUser>, IdentityService>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddTransient<ICartService, CartService>();
+builder.Services.AddTransient<IOrderService, OrderService>();
 
 var identityUrl = configuration["IdentityUrl"];
 var callBackUrl = configuration["CallBackUrl"];
@@ -67,7 +70,6 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
 
 //app.MapRazorPages();
 

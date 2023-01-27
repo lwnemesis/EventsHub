@@ -3,7 +3,7 @@ networks:
   frontend: {}
 services:
   basket.data:
-    container_name: basketdata
+    container_name: eventshubbasketdata
     image: redis
     networks:
       backend: null
@@ -12,7 +12,7 @@ services:
       target: 6379
   cart:
     build:
-      context: F:\Cohort\EventsHub\CartAPI
+      context: F:\Cohort\Copy Of\EventsHub\CartAPI
       dockerfile: Dockerfile
     container_name: eventshubcartapi
     depends_on:
@@ -32,7 +32,7 @@ services:
       target: 80
   eventshubcatalogapi:
     build:
-      context: F:\Cohort\EventsHub\EventsHubCatalogAPI
+      context: F:\Cohort\Copy Of\EventsHub\EventsHubCatalogAPI
       dockerfile: Dockerfile
     container_name: eventshubcatalogapi
     depends_on:
@@ -61,9 +61,42 @@ services:
     ports:
     - published: 1450
       target: 1433
+  order:
+    build:
+      context: F:\Cohort\Copy Of\EventsHub\OrderAPI
+      dockerfile: Dockerfile
+    container_name: eventshuborderapi
+    depends_on:
+      ordersqlserver:
+        condition: service_started
+      tokenserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=ordersqlserver;Initial Catalog=OrdersDb;User Id=sa;Password=ProductApi123(!);Connect
+        Timeout=30;TrustServerCertificate=false;Encrypt=false;
+      IdentityUrl: http://192.168.168.67:7801
+    image: eventshub/orderapi
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - published: 7021
+      target: 80
+  ordersqlserver:
+    container_name: eventshubordersqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ProductApi123(!)
+      SA_PASSWORD: ProductApi123(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - published: 1451
+      target: 1433
   tokenserver:
     build:
-      context: F:\Cohort\EventsHub\TokenServiceAPI
+      context: F:\Cohort\Copy Of\EventsHub\TokenServiceAPI
       dockerfile: Dockerfile
     container_name: eventshubtokenapi
     depends_on:
@@ -94,18 +127,26 @@ services:
       target: 1433
   webmvc:
     build:
-      context: F:\Cohort\EventsHub\WebMvc
+      context: F:\Cohort\Copy Of\EventsHub\WebMvc
       dockerfile: Dockerfile
     container_name: eventswebshop
     depends_on:
+      cart:
+        condition: service_started
       eventshubcatalogapi:
+        condition: service_started
+      order:
         condition: service_started
       tokenserver:
         condition: service_started
     environment:
       CallbackUrl: http://localhost:7501
+      CartUrl: http://cart
       CatalogUrl: http://eventshubcatalogapi
       IdentityUrl: http://192.168.168.67:7801
+      OrderUrl: http://order
+      StripePrivateKey: sk_test_bSHT9qxwjpyCOP0qdAvHLfAA
+      StripePublicKey: pk_test_jZlpubvlPmcV6QJPReImelQy
     image: eventshub/webmvc
     networks:
       frontend: null

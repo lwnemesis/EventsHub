@@ -1,6 +1,4 @@
-﻿using CartAPI.Models;
-
-namespace CartAPI.Models
+﻿namespace CartAPI.Models
 {
     public class Cart
     {

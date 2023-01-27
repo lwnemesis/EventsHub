@@ -13,8 +13,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     volumes:
-      - F:\Cohort\EventsHub\CartAPI:/app
-      - F:\Cohort\EventsHub\CartAPI:/src
+      - F:\Cohort\Copy Of\EventsHub\CartAPI:/app
+      - F:\Cohort\Copy Of\EventsHub\CartAPI:/src
       - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
@@ -41,8 +41,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     volumes:
-      - F:\Cohort\EventsHub\EventsHubCatalogAPI:/app
-      - F:\Cohort\EventsHub\EventsHubCatalogAPI:/src
+      - F:\Cohort\Copy Of\EventsHub\EventsHubCatalogAPI:/app
+      - F:\Cohort\Copy Of\EventsHub\EventsHubCatalogAPI:/src
       - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
@@ -54,6 +54,35 @@ services:
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
       com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages --additionalProbingPath /root/.nuget/fallbackpackages2  \"/app/bin/Debug/net6.0/EventsHubCatalogAPI.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
+  order:
+    image: eventshub/orderapi:dev
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "OrderAPI"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
+    volumes:
+      - F:\Cohort\Copy Of\EventsHub\OrderAPI:/app
+      - F:\Cohort\Copy Of\EventsHub\OrderAPI:/src
+      - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
+      - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages2:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages --additionalProbingPath /root/.nuget/fallbackpackages2  \"/app/bin/Debug/net6.0/OrderAPI.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
@@ -70,8 +99,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     volumes:
-      - F:\Cohort\EventsHub\TokenServiceAPI:/app
-      - F:\Cohort\EventsHub\TokenServiceAPI:/src
+      - F:\Cohort\Copy Of\EventsHub\TokenServiceAPI:/app
+      - F:\Cohort\Copy Of\EventsHub\TokenServiceAPI:/src
       - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
@@ -99,8 +128,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     volumes:
-      - F:\Cohort\EventsHub\WebMvc:/app
-      - F:\Cohort\EventsHub\WebMvc:/src
+      - F:\Cohort\Copy Of\EventsHub\WebMvc:/app
+      - F:\Cohort\Copy Of\EventsHub\WebMvc:/src
       - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro

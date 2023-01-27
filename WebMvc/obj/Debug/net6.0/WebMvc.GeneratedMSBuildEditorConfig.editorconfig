@@ -8,69 +8,109 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebMvc
 build_property.RootNamespace = WebMvc
-build_property.ProjectDir = F:\Cohort\EventsHub\WebMvc\
+build_property.ProjectDir = F:\Cohort\Copy Of\EventsHub\WebMvc\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\Cohort\EventsHub\WebMvc
+build_property.MSBuildProjectDirectory = F:\Cohort\Copy Of\EventsHub\WebMvc
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/Cohort/EventsHub/WebMvc/Pages/Error.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/Cohort/EventsHub/WebMvc/Pages/Privacy.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Pages/_ViewImports.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Pages/_ViewStart.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Views/Event/About.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Event/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcQWJvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Views/Event/Index.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Event/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Views/Event/_pagination.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Event/_pagination.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcX3BhZ2luYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Views/Event/_product.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Event/_product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRcX3Byb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Views/Shared/_Layout.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Order/Complete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ29tcGxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Order/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Order/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Order/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Order/_OrderItems.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcX09yZGVySXRlbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Shared/Components/CartList/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydExpc3RcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Shared/Components/Cart/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Views/_ViewImports.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Views/_ViewStart.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Cohort/EventsHub/WebMvc/Pages/Shared/_Layout.cshtml]
+[F:/Cohort/Copy Of/EventsHub/WebMvc/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-83gibzf0dz

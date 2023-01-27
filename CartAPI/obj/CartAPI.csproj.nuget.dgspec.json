@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Cohort\\EventsHub\\CartAPI\\CartAPI.csproj": {}
+    "F:\\Cohort\\Copy Of\\EventsHub\\CartAPI\\CartAPI.csproj": {}
   },
   "projects": {
-    "F:\\Cohort\\EventsHub\\CartAPI\\CartAPI.csproj": {
+    "F:\\Cohort\\Copy Of\\EventsHub\\CartAPI\\CartAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Cohort\\EventsHub\\CartAPI\\CartAPI.csproj",
+        "projectUniqueName": "F:\\Cohort\\Copy Of\\EventsHub\\CartAPI\\CartAPI.csproj",
         "projectName": "CartAPI",
-        "projectPath": "F:\\Cohort\\EventsHub\\CartAPI\\CartAPI.csproj",
+        "projectPath": "F:\\Cohort\\Copy Of\\EventsHub\\CartAPI\\CartAPI.csproj",
         "packagesPath": "C:\\Users\\sergey\\.nuget\\packages\\",
-        "outputPath": "F:\\Cohort\\EventsHub\\CartAPI\\obj\\",
+        "outputPath": "F:\\Cohort\\Copy Of\\EventsHub\\CartAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
