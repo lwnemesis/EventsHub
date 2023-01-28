@@ -33,3 +33,19 @@ services:
     container_name: eventshubsqlserver
     networks:
       - backend
+
+  webmvc:
+    image: eventshub/webmvc
+    build:
+      context: .\WebMvc
+      dockerfile: Dockerfile
+    environment:
+      CatalogUrl: http://eventshubcatalogapi
+      CallbackUrl: http://localhost:7501
+    ports:
+      - "7501:80"
+    container_name: eventswebshop
+    networks:
+      - frontend
+    depends_on:
+      - eventshubcatalogapi
