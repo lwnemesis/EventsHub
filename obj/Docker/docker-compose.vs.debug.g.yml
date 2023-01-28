@@ -13,8 +13,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     volumes:
-      - F:\Cohort\Copy Of\EventsHub\CartAPI:/app
-      - F:\Cohort\Copy Of\EventsHub\CartAPI:/src
+      - F:\Cohort\EventsHub\CartAPI:/app
+      - F:\Cohort\EventsHub\CartAPI:/src
       - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
@@ -41,8 +41,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     volumes:
-      - F:\Cohort\Copy Of\EventsHub\EventsHubCatalogAPI:/app
-      - F:\Cohort\Copy Of\EventsHub\EventsHubCatalogAPI:/src
+      - F:\Cohort\EventsHub\EventsHubCatalogAPI:/app
+      - F:\Cohort\EventsHub\EventsHubCatalogAPI:/src
       - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
@@ -70,8 +70,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     volumes:
-      - F:\Cohort\Copy Of\EventsHub\OrderAPI:/app
-      - F:\Cohort\Copy Of\EventsHub\OrderAPI:/src
+      - F:\Cohort\EventsHub\OrderAPI:/app
+      - F:\Cohort\EventsHub\OrderAPI:/src
       - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
@@ -99,8 +99,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     volumes:
-      - F:\Cohort\Copy Of\EventsHub\TokenServiceAPI:/app
-      - F:\Cohort\Copy Of\EventsHub\TokenServiceAPI:/src
+      - F:\Cohort\EventsHub\TokenServiceAPI:/app
+      - F:\Cohort\EventsHub\TokenServiceAPI:/src
       - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
@@ -128,8 +128,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages;/root/.nuget/fallbackpackages2
     volumes:
-      - F:\Cohort\Copy Of\EventsHub\WebMvc:/app
-      - F:\Cohort\Copy Of\EventsHub\WebMvc:/src
+      - F:\Cohort\EventsHub\WebMvc:/app
+      - F:\Cohort\EventsHub\WebMvc:/src
       - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\sergey\.nuget\packages\:/root/.nuget/packages:ro
       - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro

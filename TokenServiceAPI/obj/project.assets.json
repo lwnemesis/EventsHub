@@ -6063,11 +6063,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Cohort\\Copy Of\\EventsHub\\TokenServiceAPI\\TokenServiceAPI.csproj",
+      "projectUniqueName": "F:\\Cohort\\EventsHub\\TokenServiceAPI\\TokenServiceAPI.csproj",
       "projectName": "TokenServiceAPI",
-      "projectPath": "F:\\Cohort\\Copy Of\\EventsHub\\TokenServiceAPI\\TokenServiceAPI.csproj",
+      "projectPath": "F:\\Cohort\\EventsHub\\TokenServiceAPI\\TokenServiceAPI.csproj",
       "packagesPath": "C:\\Users\\sergey\\.nuget\\packages\\",
-      "outputPath": "F:\\Cohort\\Copy Of\\EventsHub\\TokenServiceAPI\\obj\\",
+      "outputPath": "F:\\Cohort\\EventsHub\\TokenServiceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

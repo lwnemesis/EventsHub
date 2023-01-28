@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p+CLacS5a4N0ctiGFUTFhP4CxinUFuehCCzzUzeInfM=",
+  "Hash": "0wbfpxUA1oZ9X/49M6GZkhyXnYjV2PdxbTadb29VOTM=",
   "Source": "EventsHubCatalogAPI",
   "BasePath": "_content/EventsHubCatalogAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "EventsHubCatalogAPI\\wwwroot",
       "Source": "EventsHubCatalogAPI",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event1.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event1.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event1.jpeg",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event1.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event10.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event10.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event10.jpeg",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event10.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event11.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event11.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event11.jpeg",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event11.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event12.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event12.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event12.jpeg",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event12.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event13.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event13.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event13.jpeg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event13.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event14.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event14.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event14.jpeg",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event14.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event15.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event15.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event15.jpeg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event15.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event2.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event2.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event2.jpeg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event2.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event3.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event3.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event3.jpeg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event3.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event4.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event4.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event4.jpeg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event4.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event5.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event5.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event5.jpeg",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event5.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event6.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event6.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event6.jpeg",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event6.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event7.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event7.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event7.jpeg",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event7.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event8.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event8.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event8.jpeg",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\Pics\\event8.jpeg"
     },
     {
-      "Identity": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event9.jpeg",
+      "Identity": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\Pics\\event9.jpeg",
       "SourceId": "EventsHubCatalogAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+      "ContentRoot": "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
       "BasePath": "_content/EventsHubCatalogAPI",
       "RelativePath": "Pics/event9.jpeg",
       "AssetKind": "All",

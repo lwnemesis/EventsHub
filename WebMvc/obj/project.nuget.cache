@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ISU8G845S/ct3dcwdPxOAjVKG6uwK1sw0dDYaO4g6ijiDsymGyPvwPBq15p95jWElUqmzSlXIVqxMy20iwarzA==",
+  "dgSpecHash": "fV+ze4DQXJwAxdRlTb415RTY+iazXeBq/PxenELWS5JUw+934UaxF/uvGFzWy07ootj0U7DrHgAAOZJNv3KNvw==",
   "success": true,
-  "projectFilePath": "F:\\Cohort\\Copy Of\\EventsHub\\WebMvc\\WebMvc.csproj",
+  "projectFilePath": "F:\\Cohort\\EventsHub\\WebMvc\\WebMvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sergey\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\sergey\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

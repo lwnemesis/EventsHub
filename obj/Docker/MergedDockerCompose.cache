@@ -12,11 +12,13 @@ services:
       target: 6379
   cart:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\CartAPI
+      context: F:\Cohort\EventsHub\CartAPI
       dockerfile: Dockerfile
     container_name: eventshubcartapi
     depends_on:
       basket.data:
+        condition: service_started
+      rabbitmq:
         condition: service_started
       tokenserver:
         condition: service_started
@@ -24,6 +26,11 @@ services:
       ConnectionString: basket.data
       IdentityUrl: http://192.168.168.67:7801
     image: eventshub/cartapi
+    logging:
+      driver: json-file
+      options:
+        max-file: '10'
+        max-size: 200k
     networks:
       backend: null
       frontend: null
@@ -32,7 +39,7 @@ services:
       target: 80
   eventshubcatalogapi:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\EventsHubCatalogAPI
+      context: F:\Cohort\EventsHub\EventsHubCatalogAPI
       dockerfile: Dockerfile
     container_name: eventshubcatalogapi
     depends_on:
@@ -63,11 +70,13 @@ services:
       target: 1433
   order:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\OrderAPI
+      context: F:\Cohort\EventsHub\OrderAPI
       dockerfile: Dockerfile
     container_name: eventshuborderapi
     depends_on:
       ordersqlserver:
+        condition: service_started
+      rabbitmq:
         condition: service_started
       tokenserver:
         condition: service_started
@@ -76,6 +85,11 @@ services:
         Timeout=30;TrustServerCertificate=false;Encrypt=false;
       IdentityUrl: http://192.168.168.67:7801
     image: eventshub/orderapi
+    logging:
+      driver: json-file
+      options:
+        max-file: '10'
+        max-size: 200k
     networks:
       backend: null
       frontend: null
@@ -94,9 +108,22 @@ services:
     ports:
     - published: 1451
       target: 1433
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: myrabbitmq
+    image: rabbitmq:3
+    networks:
+      backend: null
+    ports:
+    - published: 15672
+      target: 15672
+    - published: 5672
+      target: 5672
+    - published: 5671
+      target: 5671
   tokenserver:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\TokenServiceAPI
+      context: F:\Cohort\EventsHub\TokenServiceAPI
       dockerfile: Dockerfile
     container_name: eventshubtokenapi
     depends_on:
@@ -127,11 +154,15 @@ services:
       target: 1433
   webmvc:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\WebMvc
+      context: F:\Cohort\EventsHub\WebMvc
       dockerfile: Dockerfile
     container_name: eventswebshop
     depends_on:
+      cart:
+        condition: service_started
       eventshubcatalogapi:
+        condition: service_started
+      order:
         condition: service_started
       tokenserver:
         condition: service_started
@@ -144,6 +175,11 @@ services:
       StripePrivateKey: sk_test_bSHT9qxwjpyCOP0qdAvHLfAA
       StripePublicKey: pk_test_jZlpubvlPmcV6QJPReImelQy
     image: eventshub/webmvc
+    logging:
+      driver: json-file
+      options:
+        max-file: '10'
+        max-size: 200k
     networks:
       frontend: null
     ports:

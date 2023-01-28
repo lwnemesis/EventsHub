@@ -54,6 +54,7 @@ namespace OrderApi.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> CreateOrder([FromBody] Order order)
+         
         {
             order.OrderStatus = OrderStatus.Preparing;
             order.OrderDate = DateTime.UtcNow;

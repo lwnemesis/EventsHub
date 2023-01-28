@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dgdf6HOYJa3mQsp5vxRo1SRHhD9gC5iGTEAXeGKD79IXFkRHSyOU+I2QZnlvezYTVjt8M06UQH1Lzbtz6bJYJg==",
+  "dgSpecHash": "/ric2/Vccek+djmC/sfO3Tbcj3hGT5vwtGQ24uA4+f7vrtilUFpyCgcwRpVaZWZAZNy470K9LFo/2n6hApYEbA==",
   "success": true,
-  "projectFilePath": "F:\\Cohort\\Copy Of\\EventsHub\\TokenServiceAPI\\TokenServiceAPI.csproj",
+  "projectFilePath": "F:\\Cohort\\EventsHub\\TokenServiceAPI\\TokenServiceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sergey\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\sergey\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",

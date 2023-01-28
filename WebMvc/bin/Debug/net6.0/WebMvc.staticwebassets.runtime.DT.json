@@ -1,7 +1,7 @@
 {
   "ContentRoots": [
     "/src/wwwroot/",
-    "F:\\Cohort\\Copy Of\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
+    "F:\\Cohort\\EventsHub\\EventsHubCatalogAPI\\wwwroot\\",
     "/src/obj/Debug/net6.0/scopedcss/bundle/"
   ],
   "Root": {

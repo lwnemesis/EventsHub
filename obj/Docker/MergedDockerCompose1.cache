@@ -12,7 +12,7 @@ services:
       target: 6379
   cart:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\CartAPI
+      context: F:\Cohort\EventsHub\CartAPI
       dockerfile: Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
@@ -21,6 +21,8 @@ services:
     container_name: eventshubcartapi
     depends_on:
       basket.data:
+        condition: service_started
+      rabbitmq:
         condition: service_started
       tokenserver:
         condition: service_started
@@ -40,6 +42,11 @@ services:
         dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    logging:
+      driver: json-file
+      options:
+        max-file: '10'
+        max-size: 200k
     networks:
       backend: {}
       frontend: {}
@@ -48,17 +55,17 @@ services:
       target: 80
     tty: true
     volumes:
-    - F:\Cohort\Copy Of\EventsHub\CartAPI:/app:rw
+    - F:\Cohort\EventsHub\CartAPI:/app:rw
     - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
     - C:\Users\sergey\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
     - C:\Users\sergey\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
     - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
     - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages2:ro
     - C:\Users\sergey\.nuget\packages:/root/.nuget/packages:ro
-    - F:\Cohort\Copy Of\EventsHub\CartAPI:/src:rw
+    - F:\Cohort\EventsHub\CartAPI:/src:rw
   eventshubcatalogapi:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\EventsHubCatalogAPI
+      context: F:\Cohort\EventsHub\EventsHubCatalogAPI
       dockerfile: Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
@@ -93,14 +100,14 @@ services:
       target: 80
     tty: true
     volumes:
-    - F:\Cohort\Copy Of\EventsHub\EventsHubCatalogAPI:/app:rw
+    - F:\Cohort\EventsHub\EventsHubCatalogAPI:/app:rw
     - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
     - C:\Users\sergey\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
     - C:\Users\sergey\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
     - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
     - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages2:ro
     - C:\Users\sergey\.nuget\packages:/root/.nuget/packages:ro
-    - F:\Cohort\Copy Of\EventsHub\EventsHubCatalogAPI:/src:rw
+    - F:\Cohort\EventsHub\EventsHubCatalogAPI:/src:rw
   mssqlserver:
     container_name: eventshubsqlserver
     environment:
@@ -115,7 +122,7 @@ services:
       target: 1433
   order:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\OrderAPI
+      context: F:\Cohort\EventsHub\OrderAPI
       dockerfile: Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
@@ -124,6 +131,8 @@ services:
     container_name: eventshuborderapi
     depends_on:
       ordersqlserver:
+        condition: service_started
+      rabbitmq:
         condition: service_started
       tokenserver:
         condition: service_started
@@ -144,6 +153,11 @@ services:
         dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    logging:
+      driver: json-file
+      options:
+        max-file: '10'
+        max-size: 200k
     networks:
       backend: {}
       frontend: {}
@@ -152,14 +166,14 @@ services:
       target: 80
     tty: true
     volumes:
-    - F:\Cohort\Copy Of\EventsHub\OrderAPI:/app:rw
+    - F:\Cohort\EventsHub\OrderAPI:/app:rw
     - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
     - C:\Users\sergey\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
     - C:\Users\sergey\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
     - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
     - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages2:ro
     - C:\Users\sergey\.nuget\packages:/root/.nuget/packages:ro
-    - F:\Cohort\Copy Of\EventsHub\OrderAPI:/src:rw
+    - F:\Cohort\EventsHub\OrderAPI:/src:rw
   ordersqlserver:
     container_name: eventshubordersqlserver
     environment:
@@ -172,9 +186,22 @@ services:
     ports:
     - published: 1451
       target: 1433
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: myrabbitmq
+    image: rabbitmq:3
+    networks:
+      backend: {}
+    ports:
+    - published: 5671
+      target: 5671
+    - published: 5672
+      target: 5672
+    - published: 15672
+      target: 15672
   tokenserver:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\TokenServiceAPI
+      context: F:\Cohort\EventsHub\TokenServiceAPI
       dockerfile: Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
@@ -209,14 +236,14 @@ services:
       target: 80
     tty: true
     volumes:
-    - F:\Cohort\Copy Of\EventsHub\TokenServiceAPI:/app:rw
+    - F:\Cohort\EventsHub\TokenServiceAPI:/app:rw
     - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
     - C:\Users\sergey\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
     - C:\Users\sergey\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
     - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
     - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages2:ro
     - C:\Users\sergey\.nuget\packages:/root/.nuget/packages:ro
-    - F:\Cohort\Copy Of\EventsHub\TokenServiceAPI:/src:rw
+    - F:\Cohort\EventsHub\TokenServiceAPI:/src:rw
   tokensqlserver:
     container_name: eventshubtokensqlserver
     environment:
@@ -231,7 +258,7 @@ services:
       target: 1433
   webmvc:
     build:
-      context: F:\Cohort\Copy Of\EventsHub\WebMvc
+      context: F:\Cohort\EventsHub\WebMvc
       dockerfile: Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
@@ -239,7 +266,11 @@ services:
       target: base
     container_name: eventswebshop
     depends_on:
+      cart:
+        condition: service_started
       eventshubcatalogapi:
+        condition: service_started
+      order:
         condition: service_started
       tokenserver:
         condition: service_started
@@ -264,6 +295,11 @@ services:
         dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet
       com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    logging:
+      driver: json-file
+      options:
+        max-file: '10'
+        max-size: 200k
     networks:
       frontend: {}
     ports:
@@ -271,12 +307,12 @@ services:
       target: 80
     tty: true
     volumes:
-    - F:\Cohort\Copy Of\EventsHub\WebMvc:/app:rw
+    - F:\Cohort\EventsHub\WebMvc:/app:rw
     - C:\Users\sergey\vsdbg\vs2017u5:/remote_debugger:rw
     - C:\Users\sergey\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
     - C:\Users\sergey\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
     - C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages:/root/.nuget/fallbackpackages:ro
     - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages2:ro
     - C:\Users\sergey\.nuget\packages:/root/.nuget/packages:ro
-    - F:\Cohort\Copy Of\EventsHub\WebMvc:/src:rw
+    - F:\Cohort\EventsHub\WebMvc:/src:rw
 version: '3.4'
