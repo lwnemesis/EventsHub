@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebMvc</title>
 
-    <environment names="Development,Staging,Production">
+    <environment exclude="Development">
+        
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/app.css" />
         <link rel="stylesheet" href="~/css/app.component.css" />
@@ -36,7 +37,7 @@
                 <section class="col-lg-6 col-md-6 col-xs-12">
                     <a class="navbar-brand" routerLink="eventscatalogapi">
                         <a asp-area="" asp-controller="Event" asp-action="Index">
-                            <img src="~/images/Logo-4.png"  height="150" width="250"/>
+                            <img src="~/images/Logo-4.png" height="150" width="250" />
                         </a>
                     </a>
                 </section>

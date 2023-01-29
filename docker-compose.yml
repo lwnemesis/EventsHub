@@ -69,7 +69,7 @@ services:
       dockerfile: Dockerfile
     environment:
       CatalogUrl: http://eventshubcatalogapi
-      IdentityUrl: http://192.168.168.67:7801
+      IdentityUrl: http://192.168.1.47:7801
       CallbackUrl: http://localhost:7501
     ports:
       - "7501:80"
