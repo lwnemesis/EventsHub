@@ -1,10 +1,11 @@
 using CartApi.Data;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using StackExchange.Redis;
 using System.IdentityModel.Tokens.Jwt;
 
-using System.IdentityModel.
+
 
 
 var builder = WebApplication.CreateBuilder(args);
