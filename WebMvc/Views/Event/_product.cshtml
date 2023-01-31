@@ -1,5 +1,8 @@
 ﻿@model WebMvc.Models.EventType
 
+
+
+
 <form asp-controller="Cart" asp-action="AddToCart">
     <img class="esh-catalog-thumbnail" src="@Model.PictureUrl" />
     <input class="esh-catalog-button" type="submit" value="[ ADD TO CART ]" />
@@ -10,7 +13,7 @@
         <span>@Model.Price.ToString("N2")</span>
     </div>
     <input type="hidden" asp-for="@Model.OrganizerType" name="Organizer" />
-    <input type="hidden" asp-for="@Model.OrganizerTypeId" name="organizerId" />
+    <input type="hidden" asp-for="@Model.OrganizerTypeId" name="OrganizerId" />
     <input type="hidden" asp-for="@Model.CategoryType" name="type" />
     <input type="hidden" asp-for="@Model.CategoryTypeId" name="typeId" />
     <input type="hidden" asp-for="@Model.Description" name="description" />

@@ -18,7 +18,7 @@ namespace EventsHubCatalogAPI.Controllers
         public IActionResult GetImage(int id)
         {
             var webRoot = _env.WebRootPath;
-            var path = Path.Combine($"{webRoot}/Pics/", $"event{id}.jpeg");
+            var path = Path.Combine($"{webRoot}/pic/", $"event{id}.jpeg");
             var buffer = System.IO.File.ReadAllBytes(path);
             return File(buffer, "image/jpeg");
         }
