@@ -79,3 +79,33 @@ services:
     depends_on:
       - eventshubcatalogapi
       - tokenserver
+
+  order:
+    image: eventshub/orderapi
+    build:
+      context: .\OrderAPI
+      dockerfile: Dockerfile
+    environment:
+      IdentityUrl: http://192.168.168.67:7801
+      ConnectionString: "Data Source=ordersqlserver;Initial Catalog=OrdersDb;User Id=sa;Password=ProductApi123(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;"
+    ports:
+      - "7021:80"
+    container_name: eventshuborderapi
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - tokenserver
+      - ordersqlserver
+  
+  ordersqlserver:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: ProductApi123(!)
+      SA_PASSWORD: ProductApi123(!)
+    ports:
+      - "1451:1433"
+    container_name: eventshubordersqlserver
+    networks:
+      - backend

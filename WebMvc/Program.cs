@@ -16,6 +16,8 @@ builder.Services.AddSingleton<IHttpClient, CustomHttpClient>();
 builder.Services.AddTransient<ICatalogService, CatalogService>();
 builder.Services.AddTransient<IIdentityService<ApplicationUser>, IdentityService>();
 
+builder.Services.AddTransient<IOrderService, OrderService>();
+
 var identityUrl = configuration["IdentityUrl"];
 var callBackUrl = configuration["CallBackUrl"];
 
