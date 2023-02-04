@@ -7,6 +7,7 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
+<<<<<<< Updated upstream:EventsHubCatalogAPI/obj/Debug/net6.0/EventsCatalogAPI.GeneratedMSBuildEditorConfig.editorconfig
 build_property.RootNamespace = EventsCatalogAPI
 build_property.RootNamespace = EventsCatalogAPI
 build_property.ProjectDir = C:\KalAcadamy\Assignment2\HarshiEvents\EventsCatalogAPI\
@@ -14,4 +15,13 @@ build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\KalAcadamy\Assignment2\HarshiEvents\EventsCatalogAPI
+=======
+build_property.RootNamespace = EventsHubCatalogAPI
+build_property.RootNamespace = EventsHubCatalogAPI
+build_property.ProjectDir = C:\Users\harsh\Source\Repos\EventsHub\EventsHubCatalogAPI\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\harsh\Source\Repos\EventsHub\EventsHubCatalogAPI
+>>>>>>> Stashed changes:EventsHubCatalogAPI/obj/Debug/net6.0/EventsHubCatalogAPI.GeneratedMSBuildEditorConfig.editorconfig
 build_property._RazorSourceGeneratorDebug = 

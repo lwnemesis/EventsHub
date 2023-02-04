@@ -72,8 +72,12 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       CatalogUrl: http://eventscatalogapi
-      IdentityUrl: http://172.27.208.1:7801
+      IdentityUrl: http://172.27.96.1:7801
       CallbackUrl: http://localhost:7505
+      CartUrl: http://cart 
+      OrderUrl: http://order
+      StripePublicKey: pk_test_51MXZkKDgg1mbxwWTSapgZsTfpC13N69W1aFgkiy8Mx73NpJ4vYPJfs9nZqBhgI6jlqISmSkHAD8Weatn3coqX1jf004egQjKZn
+      StripePrivateKey: sk_test_51MXZkKDgg1mbxwWTK2DT05AcwmHp8dVAZaX27V3rydP8i58xKCTVUY2IyCaG3zqflE10PryL42ILNCyYawDwDfBt00SunuDj7c
     ports:
       - "7505:80"
     container_name: eventswebshop
@@ -82,3 +86,86 @@ services:
     depends_on:
       - eventscatalogapi
       - tokenserver
+      - cart
+      - order
+
+  cart:
+    image: eventshub/cartapi
+    build:
+      context: .\CartAPI
+      dockerfile: Dockerfile
+    logging:
+      driver: "json-file"
+      options: {
+        max-size: "200k",
+        max-file: "10"
+      }
+    environment:
+      IdentityUrl: http://172.27.96.1:7801
+      ConnectionString: basket.data
+    ports:
+      - "7011:80"
+    container_name: eventshubcartapi
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - tokenserver
+      - basket.data
+      - rabbitmq
+
+  basket.data:
+   image: redis
+   ports:
+     - "7051:6379"
+   container_name: eventshubbasketdata
+   networks:
+     - backend
+
+  order:
+    image: eventshub/orderapi
+    build:
+      context: .\OrderAPI
+      dockerfile: Dockerfile
+    logging:
+      driver: "json-file"
+      options: {
+        max-size: "200k",
+        max-file: "10"
+      }
+    environment:
+      IdentityUrl: http://172.27.96.1:7801
+      ConnectionString: "Data Source=ordersqlserver;Initial Catalog=OrdersDb;User Id=sa;Password=ProductApi123(!);Connect Timeout=30;TrustServerCertificate=false;Encrypt=false;"
+    ports:
+      - "7021:80"
+    container_name: eventshuborderapi
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - tokenserver
+      - ordersqlserver
+      - rabbitmq
+  
+  ordersqlserver:
+    image: "mcr.microsoft.com/mssql/server:latest"
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: ProductApi123(!)
+      SA_PASSWORD: ProductApi123(!)
+    ports:
+      - "1451:1433"
+    container_name: eventshubordersqlserver
+    networks:
+      - backend
+
+  rabbitmq:
+    image: rabbitmq:3
+    container_name: rabbitmq
+    hostname: myrabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+      - "5671:5671"
+    networks:
+      - backend 

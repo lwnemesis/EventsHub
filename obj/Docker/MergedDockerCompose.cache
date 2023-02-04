@@ -1,5 +1,44 @@
 name: dockercompose7251985271223463148
 services:
+  basket.data:
+    container_name: eventshubbasketdata
+    image: redis
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 6379
+      published: "7051"
+      protocol: tcp
+  cart:
+    build:
+      context: C:\Users\harsh\Source\Repos\EventsHub\CartAPI
+      dockerfile: Dockerfile
+    container_name: eventshubcartapi
+    depends_on:
+      basket.data:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+      tokenserver:
+        condition: service_started
+    environment:
+      ConnectionString: basket.data
+      IdentityUrl: http://172.27.96.1:7801
+    image: eventshub/cartapi
+    logging:
+      driver: json-file
+      options:
+        max-file: "10"
+        max-size: 200k
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7011"
+      protocol: tcp
   eventscatalogapi:
     build:
       context: C:\Users\harsh\Source\Repos\EventsHub\EventsHubCatalogAPI
@@ -34,6 +73,69 @@ services:
     - mode: ingress
       target: 1433
       published: "1449"
+      protocol: tcp
+  order:
+    build:
+      context: C:\Users\harsh\Source\Repos\EventsHub\OrderAPI
+      dockerfile: Dockerfile
+    container_name: eventshuborderapi
+    depends_on:
+      ordersqlserver:
+        condition: service_started
+      rabbitmq:
+        condition: service_started
+      tokenserver:
+        condition: service_started
+    environment:
+      ConnectionString: Data Source=ordersqlserver;Initial Catalog=OrdersDb;User Id=sa;Password=ProductApi123(!);Connect
+        Timeout=30;TrustServerCertificate=false;Encrypt=false;
+      IdentityUrl: http://172.27.96.1:7801
+    image: eventshub/orderapi
+    logging:
+      driver: json-file
+      options:
+        max-file: "10"
+        max-size: 200k
+    networks:
+      backend: null
+      frontend: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "7021"
+      protocol: tcp
+  ordersqlserver:
+    container_name: eventshubordersqlserver
+    environment:
+      ACCEPT_EULA: "true"
+      MSSQL_SA_PASSWORD: ProductApi123(!)
+      SA_PASSWORD: ProductApi123(!)
+    image: mcr.microsoft.com/mssql/server:latest
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 1433
+      published: "1451"
+      protocol: tcp
+  rabbitmq:
+    container_name: rabbitmq
+    hostname: myrabbitmq
+    image: rabbitmq:3
+    networks:
+      backend: null
+    ports:
+    - mode: ingress
+      target: 15672
+      published: "15672"
+      protocol: tcp
+    - mode: ingress
+      target: 5672
+      published: "5672"
+      protocol: tcp
+    - mode: ingress
+      target: 5671
+      published: "5671"
       protocol: tcp
   tokenserver:
     build:
@@ -76,15 +178,23 @@ services:
       dockerfile: Dockerfile
     container_name: eventswebshop
     depends_on:
+      cart:
+        condition: service_started
       eventscatalogapi:
+        condition: service_started
+      order:
         condition: service_started
       tokenserver:
         condition: service_started
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       CallbackUrl: http://localhost:7505
+      CartUrl: http://cart
       CatalogUrl: http://eventscatalogapi
-      IdentityUrl: http://172.27.208.1:7801
+      IdentityUrl: http://172.27.96.1:7801
+      OrderUrl: http://order
+      StripePrivateKey: sk_test_51MXZkKDgg1mbxwWTK2DT05AcwmHp8dVAZaX27V3rydP8i58xKCTVUY2IyCaG3zqflE10PryL42ILNCyYawDwDfBt00SunuDj7c
+      StripePublicKey: pk_test_51MXZkKDgg1mbxwWTSapgZsTfpC13N69W1aFgkiy8Mx73NpJ4vYPJfs9nZqBhgI6jlqISmSkHAD8Weatn3coqX1jf004egQjKZn
     image: eventshub/webmvc
     networks:
       frontend: null

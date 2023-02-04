@@ -56,6 +56,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[7.2.3, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[41.6.0, )"
             }
           },
           "imports": [
