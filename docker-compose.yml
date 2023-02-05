@@ -43,19 +43,19 @@ services:
     image: events/cartapi
     build:
       context: .\CartApi
-      dockfile: Dockerfile
+      dockerfile: Dockerfile
     environment:
       IdentityUrl: http://192.168.1.47:7071
       ConnectionString: basket.data
-  ports:
-    -"7012:80"
-  container_name: eventscartapi
-  networks:
-    - frontend
-    - backend
-  depends_on:
-    - tokenserver
-    - basket.data
+    ports:
+      - "7012:80"
+    container_name: eventscartapi
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - tokenserver
+      - basket.data
 
 
 
@@ -72,6 +72,7 @@ services:
       CatalogUrl: http://eventshubcatalogapi
       IdentityUrl: http://192.168.1.47:7071
       CallbackUrl: http://localhost:7075
+      CartUrl: http://cart
     ports:
       - "7075:80"
     container_name: eventsshop
@@ -108,12 +109,12 @@ services:
     networks:
       - backend
 
-  basket.data :
+  basket.data:
     image: redis
     ports:
       - "7060:6379"
     container_name: basketdata
-    network:
+    networks:
       - backend
 
 

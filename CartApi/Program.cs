@@ -41,30 +41,17 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuer = false,
         ValidateAudience = false
     };
-    options.Audience = "basket";
-});
-
-builder.Services.AddMassTransit(cfg =>
-{
-    cfg.AddConsumer<OrderCompletedEventConsumer>();
-    cfg.AddBus(provider =>
+    options.Audience = "basket"; 
+    options.Events = new JwtBearerEvents
     {
-        return Bus.Factory.CreateUsingRabbitMq(rmq =>
+        OnAuthenticationFailed = async ctx =>
         {
-            rmq.Host(new Uri("rabbitmq://rabbitmq"), "/", h =>
-            {
-                h.Username("guest");
-                h.Password("guest");
-            });
-            rmq.ReceiveEndpoint("JewelscartOct2022", e =>
-            {
-                e.ConfigureConsumer<OrderCompletedEventConsumer>(provider);
-
-            });
-        });
-
-    });
+            var putBreakpointHere = true;
+            var exceptionMessage = ctx.Exception;
+        },
+    };
 });
+
 
 
 
@@ -82,7 +69,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

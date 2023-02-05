@@ -7,9 +7,9 @@
         public Cart() { }
         public Cart(string cartId)
         {
-            BuyerId=cartId;
+            BuyerId = cartId;
             Items = new List<CartItem>();
         }
-      
+    } 
     
 }
