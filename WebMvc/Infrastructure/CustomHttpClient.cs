@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Net.Http.Headers;
 
 namespace WebMvc.Infrastructure
@@ -37,9 +36,9 @@ namespace WebMvc.Infrastructure
             return await DoPostPutAysnc(HttpMethod.Post, uri, item, authorizationToken, authorizationMethod);
         }
 
-        public Task<HttpResponseMessage> PutAsync<T>(string uri, T item, string authorizationToken = null, string authorizationMethod = "Bearer")
+        public async Task<HttpResponseMessage> PutAsync<T>(string uri, T item, string authorizationToken = null, string authorizationMethod = "Bearer")
         {
-            throw new NotImplementedException();
+            return await DoPostPutAysnc(HttpMethod.Put, uri, item, authorizationToken, authorizationMethod);
         }
         private async Task<HttpResponseMessage> DoPostPutAysnc<T>(HttpMethod method, string uri, T item, string authorizationToken, string authorizationMethod)
         {

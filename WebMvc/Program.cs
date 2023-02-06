@@ -18,6 +18,8 @@ builder.Services.AddTransient<IIdentityService<ApplicationUser>, IdentityService
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddTransient<ICartService, CartService>();
 
+builder.Services.AddTransient<IOrderService, OrderService>();
+
 var identityUrl = configuration["IdentityUrl"];
 var callBackUrl = configuration["CallBackUrl"];
 
