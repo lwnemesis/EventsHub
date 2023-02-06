@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\" />
+    <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
