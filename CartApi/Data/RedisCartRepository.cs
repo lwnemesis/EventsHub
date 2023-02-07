@@ -1,4 +1,5 @@
-﻿using CartApi.Models;
+﻿using CartApi.Data;
+using CartApi.Models;
 
 using Newtonsoft.Json;
 using StackExchange.Redis;

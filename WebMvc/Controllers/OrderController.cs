@@ -42,65 +42,65 @@ namespace WebMvc.Controllers
         {
             //if (ModelState.IsValid)
             //{
-                var user = _identitySvc.Get(HttpContext.User);
-                var order = frmOrder;
-                order.UserName = user.Email;
-                order.BuyerId = user.Email;
-                order.OrderDate = DateTime.Now;
-                order.OrderStatus = OrderStatus.Preparing;
+            var user = _identitySvc.Get(HttpContext.User);
+            var order = frmOrder;
+            order.UserName = user.Email;
+            order.BuyerId = user.Email;
+            order.OrderDate = DateTime.Now;
+            order.OrderStatus = OrderStatus.Preparing;
 
-                var options = new RequestOptions
-                {
-                    ApiKey = _config["StripePrivateKey"]
-                };
+            var options = new RequestOptions
+            {
+                ApiKey = _config["StripePrivateKey"]
+            };
 
-                var chargeOptions = new ChargeCreateOptions
-                {
-                    Amount = (int)(order.OrderTotal * 100),
-                    Currency = "usd",
-                    Source = order.StripeToken,
-                    Description = $"Jewelsoncontainer Order payment {order.UserName}",
-                    ReceiptEmail = order.UserName
-                };
-                var chargeService = new ChargeService();
-                Charge stripeCharge = null;
+            var chargeOptions = new ChargeCreateOptions
+            {
+                Amount = (int)(order.OrderTotal * 100),
+                Currency = "usd",
+                Source = order.StripeToken,
+                Description = $"EventsHub Order payment {order.UserName}",
+                ReceiptEmail = order.UserName
+            };
+            var chargeService = new ChargeService();
+            Charge stripeCharge = null;
 
-                try
+            try
+            {
+                stripeCharge = chargeService.Create(chargeOptions, options);
+            }
+            catch (StripeException stripeException)
+            {
+                _logger.LogDebug("Stripe exception " + stripeException.Message);
+                ModelState.AddModelError(string.Empty, stripeException.Message);
+                return View(frmOrder);
+            }
+
+            try
+            {
+
+                if (stripeCharge.Id != null)
                 {
-                    stripeCharge = chargeService.Create(chargeOptions, options);
+                    order.PaymentAuthCode = stripeCharge.Id;
+
+                    int orderId = await _orderSvc.CreateOrder(order);
+
+                    await _cartSvc.ClearCart(user);
+                    return RedirectToAction("Complete", new { id = orderId, userName = user.UserName });
                 }
-                catch (StripeException stripeException)
+
+                else
                 {
-                    _logger.LogDebug("Stripe exception " + stripeException.Message);
-                    ModelState.AddModelError(string.Empty, stripeException.Message);
+                    ViewData["message"] = "Payment cannot be processed, try again";
                     return View(frmOrder);
                 }
 
-                try
-                {
-
-                    if (stripeCharge.Id != null)
-                    {
-                        order.PaymentAuthCode = stripeCharge.Id;
-
-                        int orderId = await _orderSvc.CreateOrder(order);
-
-                        await _cartSvc.ClearCart(user);
-                        return RedirectToAction("Complete", new { id = orderId, userName = user.UserName });
-                    }
-
-                    else
-                    {
-                        ViewData["message"] = "Payment cannot be processed, try again";
-                        return View(frmOrder);
-                    }
-
-                }
-                catch (BrokenCircuitException)
-                {
-                    ModelState.AddModelError("Error", "It was not possible to create a new order, please try later on. (Business Msg Due to Circuit-Breaker)");
-                    return View(frmOrder);
-                }
+            }
+            catch (BrokenCircuitException)
+            {
+                ModelState.AddModelError("Error", "It was not possible to create a new order, please try later on. (Business Msg Due to Circuit-Breaker)");
+                return View(frmOrder);
+            }
 
             //}
             //else
