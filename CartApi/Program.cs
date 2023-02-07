@@ -1,3 +1,4 @@
+using CartApi.Messaging.Consumers;
 using CartApi.Data;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -6,23 +7,21 @@ using StackExchange.Redis;
 using System.IdentityModel.Tokens.Jwt;
 
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
-
 builder.Services.AddControllers().AddNewtonsoftJson();
-builder.Services.AddTransient<ICartRepository,RedisCartRepository>();
+builder.Services.AddTransient<ICartRepository, RedisCartRepository>();
 builder.Services.AddSingleton<ConnectionMultiplexer>(cm =>
 {
     var config = ConfigurationOptions.Parse(
-                      configuration["ConnectionString"], true);
+        configuration["ConnectionString"], true);
     config.ResolveDns = true;
     config.AbortOnConnectFail = true;
     return ConnectionMultiplexer.Connect(config);
-
 });
+
+// prevent from mapping "sub" claim to nameidentifier.
 JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 var identityUrl = configuration["IdentityUrl"];
@@ -41,18 +40,30 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuer = false,
         ValidateAudience = false
     };
-    options.Audience = "basket"; 
-    options.Events = new JwtBearerEvents
-    {
-        OnAuthenticationFailed = async ctx =>
-        {
-            var putBreakpointHere = true;
-            var exceptionMessage = ctx.Exception;
-        },
-    };
+    options.Audience = "basket";
 });
 
+builder.Services.AddMassTransit(cfg =>
+{
+    cfg.AddConsumer<OrderCompletedEventConsumer>();
+    cfg.AddBus(provider =>
+    {
+        return Bus.Factory.CreateUsingRabbitMq(rmq =>
+        {
+            rmq.Host(new Uri("rabbitmq://rabbitmq"), "/", h =>
+            {
+                h.Username("guest");
+                h.Password("guest");
+            });
+            rmq.ReceiveEndpoint("EventsHub", e =>
+            {
+                e.ConfigureConsumer<OrderCompletedEventConsumer>(provider);
 
+            });
+        });
+
+    });
+});
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

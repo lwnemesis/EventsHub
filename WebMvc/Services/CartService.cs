@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Newtonsoft.Json;
-using static WebMvc.Infrastructure.APIPaths;
 using WebMvc.Infrastructure;
 using WebMvc.Models;
 using WebMvc.Models.CartModels;
+using WebMvc.Models.OrderModels;
 
 namespace WebMvc.Services
 {
-    public class CartService:ICartService
-
+    public class CartService : ICartService
     {
         private readonly string _baseUrl;
         private readonly IConfiguration _config;
@@ -92,8 +91,28 @@ namespace WebMvc.Services
             return cart;
         }
 
-       
+        public Order MapCartToOrder(Cart cart)
+        {
+            var order = new Order();
+            order.OrderTotal = 0;
 
+            cart.Items.ForEach(x =>
+            {
+                order.OrderItems.Add(new OrderItem()
+                {
+                    ProductId = int.Parse(x.ProductId),
+
+                    PictureUrl = x.PictureUrl,
+                    ProductName = x.ProductName,
+                    Units = x.Quantity,
+                    UnitPrice = x.UnitPrice
+                });
+                order.OrderTotal += (x.Quantity * x.UnitPrice);
+            });
+
+            return order;
+        }
 
     }
+
 }
